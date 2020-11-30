@@ -12,6 +12,6 @@
 
 # create react application
 
-npm install -g create-react-app
+`npm install -g create-react-app`
 
-npx create-react-app movies-app --template typescript
+`npx create-react-app movies-app --template typescript`
