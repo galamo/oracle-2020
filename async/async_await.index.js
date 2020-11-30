@@ -99,13 +99,18 @@ function searchTitleInServer(title) {
 
 async function getMovies(title) {
   console.log("Start getMovies");
-  const result = await searchTitleInServer(title);
-  console.log(result);
+  try {
+    await searchTitleInServer(title);
+  } catch (ex) {
+    console.log(ex);
+  }
+
+  //   console.log(result);
   console.log("Ends getMovies");
 }
 
 console.log("Script Start");
-getMovies("Avatar");
+getMovies("Avata");
 console.log("Script Ends");
 
 // Script Start
