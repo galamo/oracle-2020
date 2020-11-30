@@ -1,19 +1,16 @@
 console.log("Oracle API");
+require("dotenv").config();
 const express = require("express");
-const { movies } = require("./data/movies");
-const { searchMovies } = require("./handlers/search");
+const { router: moviesRouter } = require("./routes/movies");
+const cors = require("cors");
 const app = express();
-console.log(movies);
-// entry point
-// localhost:3500/movies
-app.get("/movies", (req, res, next) => {
-  res.json(movies);
+
+app.use(cors());
+app.use((req, res, next) => {
+  console.log(`request ip is: ${req.ip}`);
+  next();
 });
 
-app.get("/movies/search", (req, res, next) => {
-  const { search } = req.query;
-  const result = searchMovies(search, movies);
-  res.json(result);
-});
+app.use("/", moviesRouter);
 
-app.listen(3500);
+app.listen(process.env.PORT);
