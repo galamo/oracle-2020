@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "1.1.1",
+  "description": "oracle week",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gal Amouyal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
